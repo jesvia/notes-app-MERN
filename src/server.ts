@@ -1,17 +1,12 @@
 // let's connect to our db
-// fist will be .env dependency, we need to import it as early as possible
-import "dotenv/config";
+// importing app
+import app from "./app";
 // importing mongoose
 import mongoose from "mongoose";
 // importing our cleanENV, since the cleanEnv is a default export, we can name it anything
 import env from "./util/validateEnv";
 // because of this relating en with cleanEnv, we can use env.PORT
 // and it will take care of undefined port and will crash the server automatically
-import express from "express";
-const app = express();
-// app is our server
-// Calls the express function "express()" and puts new
-//  Express application inside the app variable (to start a new Express application)
 // defining a port
 // const port = 5000; 
 // we arent supposed to get the port from here, we are supposed to get it from the environment variables
@@ -23,11 +18,7 @@ const app = express();
 // i.e is a lot of work, so we use a package -- ENVALID
 // it checks the env file, if nything is missing, it enforcex the schema & points out the error
 
-// this is a routing method -- GET and POST
-// respond with "hello world" when a GET request is made to the homepage
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+
 // connecting mongoose to our mongoDB
 // process.env -- is to process environment variables
 // our variable is MONGO_CONNECTION_STRING
