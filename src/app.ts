@@ -1,6 +1,8 @@
 // fist will be .env dependency, we need to import it as early as possible
 import "dotenv/config";
 import express from "express";
+// importing our note we cn name the import anything caue it is default export
+import NoteModel from "./models/note";
 
 const app = express();
 // app is our server
@@ -15,3 +17,4 @@ app.get("/", (req, res) => {
 // to use app in our server we need to export it
 // we are exporting expresse app which calls our end points
 export default app;
+// if we want to use mongoose, we define a model to use in our database
